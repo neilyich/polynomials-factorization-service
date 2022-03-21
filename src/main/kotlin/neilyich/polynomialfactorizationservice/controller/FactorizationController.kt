@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController
 class FactorizationController(private val factorizationService: FactorizationService) {
     @RequestMapping("/factorization")
     fun makeFactorization(@RequestParam("polynomial") polynomialString: String, @RequestParam("mod") mod: Int): String {
-        return factorizationService.makeFactorization(AFieldPolynomial.fromString(polynomialString, PrimeField(mod))).replace("\n", "<br>") +
+        return factorizationService.makeFactorization(AFieldPolynomial.fromString(polynomialString.replace(Regex("\\s*\\+\\s*"), " + "), PrimeField(mod))).replace("\n", "<br>") +
                 "<form action=\"/home\"><button>Home</button></form>"
     }
 }
