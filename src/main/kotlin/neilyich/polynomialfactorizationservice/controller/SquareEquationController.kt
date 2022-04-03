@@ -16,7 +16,6 @@ class SquareEquationController(private val squareEquationSolver: SquareEquationS
                       @RequestParam("x") x: Int,
                       @RequestParam("free") free: Int,
                       @RequestParam("mod") mod: Int): String {
-        println("here")
         val field = PrimeField(mod)
         return squareEquationSolver.solve(SquareEquation(field, PrimeFieldElement(field, xSquare), PrimeFieldElement(field, x), PrimeFieldElement(field, free))).replace("\n", "<br>") +
                 "<form action=\"/square-equation/home\"><button>Home</button></form>"
