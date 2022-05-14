@@ -19,7 +19,7 @@ class EllipticCurveExpressionCalculatorImpl : EllipticCurveExpressionCalculator 
         val f = PrimeField(mod)
         val curve = EllipticCurve(f, f(a), f(b))
         val pointsMap = parsePoints(f, points)
-        val prefix = "calculating value for: \n$curve, \n$f, \npoints: $pointsMap, \nexpression: $expression"
+        val prefix = "Calculating value for: \n$curve, \n$f, \npoints: $pointsMap, \nexpression: $expression"
         log.info(prefix)
         val expr = EllipticCurveExpressions(curve)
         for ((name, point) in pointsMap) {
