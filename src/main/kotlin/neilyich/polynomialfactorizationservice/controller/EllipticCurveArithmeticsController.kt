@@ -14,7 +14,7 @@ class EllipticCurveArithmeticsController(private val ellipticCurveExpressionCalc
                           @RequestParam("expr") expr: String,
                           @RequestParam("points") points: String): String {
 
-        return ellipticCurveExpressionCalculator.calculate(mod,a, b, expr, points).replace("\n", "<br>") +
+        return ellipticCurveExpressionCalculator.calculate(mod, a, b, expr, points).replace("\n", "<br>") +
                 "<form action=\"/elliptic-curve/home\"><button>Home</button></form>"
     }
 

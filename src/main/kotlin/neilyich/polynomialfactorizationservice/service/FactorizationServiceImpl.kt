@@ -3,6 +3,7 @@ package neilyich.polynomialfactorizationservice.service
 import neilyich.field.element.FieldElement
 import neilyich.field.polynomial.AFieldPolynomial
 import neilyich.field.polynomial.OnePolynomial
+import neilyich.polynomialfactorizationservice.config.WrapExceptions
 import neilyich.util.FieldPolynomialUtils
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
@@ -11,6 +12,7 @@ import java.io.PrintStream
 import java.nio.charset.StandardCharsets
 
 @Service
+@WrapExceptions
 class FactorizationServiceImpl : FactorizationService {
     private val log = LoggerFactory.getLogger(FactorizationServiceImpl::class.java)
 

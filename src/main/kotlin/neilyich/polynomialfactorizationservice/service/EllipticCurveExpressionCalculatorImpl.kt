@@ -1,6 +1,7 @@
 package neilyich.polynomialfactorizationservice.service
 
 import com.github.keelar.exprk.EllipticCurveExpressions
+import neilyich.polynomialfactorizationservice.config.WrapExceptions
 import neilyich.field.Field
 import neilyich.field.PrimeField
 import neilyich.field.element.PrimeFieldElement
@@ -12,6 +13,7 @@ import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
 
 @Service
+@WrapExceptions
 class EllipticCurveExpressionCalculatorImpl : EllipticCurveExpressionCalculator {
     private val log = LoggerFactory.getLogger(EllipticCurveExpressionCalculatorImpl::class.java)
 

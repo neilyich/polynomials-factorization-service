@@ -1,8 +1,10 @@
 package neilyich.polynomialfactorizationservice.service
 
+import neilyich.polynomialfactorizationservice.config.WrapExceptions
 import org.springframework.stereotype.Service
 
 @Service
+@WrapExceptions
 class ContinuedFractionCalculatorImpl : ContinuedFractionCalculator {
     override fun calculateContinuedFraction(n: Int, m: Int): String {
         var ni = n

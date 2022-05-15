@@ -3,6 +3,7 @@ package neilyich.polynomialfactorizationservice.service
 import neilyich.field.element.PrimeFieldElement
 import neilyich.field.equations.SquareEquation
 import neilyich.field.equations.SquareEquationUtils
+import neilyich.polynomialfactorizationservice.config.WrapExceptions
 import org.springframework.stereotype.Service
 import java.io.ByteArrayOutputStream
 import java.io.PrintStream
@@ -10,6 +11,7 @@ import java.lang.Exception
 import java.nio.charset.StandardCharsets
 
 @Service
+@WrapExceptions
 class SquareEquationSolverImpl : SquareEquationSolver {
     override fun solve(equation: SquareEquation<PrimeFieldElement>): String {
         val stream = ByteArrayOutputStream()
